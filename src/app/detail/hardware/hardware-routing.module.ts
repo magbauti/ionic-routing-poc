@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Tab1Page } from './tab1.page';
+import {HardwareComponent} from "./hardware.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: Tab1Page,
-  },
-  {
-    path: 'detail/:id',
-    loadChildren: () =>
-      import('../detail/detail.module').then((m) => m.DetailPageModule),
+    component: HardwareComponent,
+
   },
 ];
 
@@ -18,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Tab1PageRoutingModule {}
+export class HardwareRoutingModule {}
