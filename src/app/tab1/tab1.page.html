@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Tab 1
@@ -6,34 +6,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+<!--  <ion-header collapse="condense">-->
+<!--    <ion-toolbar>-->
+<!--      <ion-title size="large">Tab 1</ion-title>-->
+<!--    </ion-toolbar>-->
+<!--  </ion-header>-->
 
-  <ion-list>
-    <ion-card button  routerLink="detail/card1"> <!--href="./card1"-->
-      <ion-card-header>
-        <ion-card-title>Card Title1</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="assets" href="assets">
+        <ion-label>Assets</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="advisories" href="advisories">
+        <ion-label>Advisories</ion-label>
+      </ion-tab-button>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-    <ion-card button routerLink="detail/card2">
-      <ion-card-header>
-        <ion-card-title>Card Title2</ion-card-title>
-        <ion-card-subtitle>Card Subtitle2</ion-card-subtitle>
-      </ion-card-header>
+      <ion-tab-button tab="cases" href="cases">
+        <ion-label>Cases</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
 
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.222
-      </ion-card-content>
-    </ion-card>
+  </ion-tabs>
 
-  </ion-list>
+
+
 </ion-content>
