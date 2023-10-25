@@ -6,12 +6,36 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+    children: [
+      {
+        path: 'assets',
+        loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule)
+      },
+      {
+        path: 'advisories',
+        loadChildren: () => import('./advisories/advisories.module').then(m => m.AdvisoriesModule)
+      },
+      {
+        path: 'cases',
+        loadChildren: () => import('./cases/cases.module').then(m => m.CasesModule)
+      },
+      {
+        path: '',
+        redirectTo: 'assets',
+        pathMatch: 'full'
+      }
+    ]
   },
   {
     path: 'detail/:id',
     loadChildren: () =>
       import('../detail/detail.module').then((m) => m.DetailPageModule),
   },
+  // {
+  //   path: '**',
+  //   redirectTo: 'tab1/assets',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({
