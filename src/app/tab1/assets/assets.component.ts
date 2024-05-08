@@ -5,10 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './assets.component.html',
   styleUrls: ['./assets.component.scss'],
 })
-export class AssetsComponent  implements OnInit {
+export class AssetsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  items = [] as string[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.generateItems();
+  }
 
+  private generateItems() {
+    const count = this.items.length + 1;
+    for (let i = 0; i < 50; i++) {
+      this.items.push(`Item ${count + i}`);
+    }
+  }
 }

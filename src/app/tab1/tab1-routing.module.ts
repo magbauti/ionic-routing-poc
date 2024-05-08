@@ -9,37 +9,42 @@ const routes: Routes = [
     children: [
       {
         path: 'assets',
-        loadChildren: () => import('./assets/assets.module').then(m => m.AssetsModule)
+        loadChildren: () =>
+          import('./assets/assets.module').then((m) => m.AssetsModule),
       },
       {
         path: 'advisories',
-        loadChildren: () => import('./advisories/advisories.module').then(m => m.AdvisoriesModule)
+        loadChildren: () =>
+          import('./advisories/advisories.module').then(
+            (m) => m.AdvisoriesModule
+          ),
       },
       {
         path: 'cases',
-        loadChildren: () => import('./cases/cases.module').then(m => m.CasesModule)
+        loadChildren: () =>
+          import('./cases/cases.module').then((m) => m.CasesModule),
       },
       {
         path: '',
         redirectTo: 'assets',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: 'detail/:id',
     loadChildren: () =>
       import('../detail/detail.module').then((m) => m.DetailPageModule),
   },
-  // {
-  //   path: '**',
-  //   redirectTo: 'tab1/assets',
-  //   pathMatch: 'full'
-  // }
+  {
+    path: '**',
+    redirectTo: 'tab1/assets',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class Tab1PageRoutingModule {}
