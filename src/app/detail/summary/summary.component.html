@@ -1,10 +1,11 @@
-<h2>Summary Page!!!</h2>
-<ion-card>
+<h2>360 Details Summary Page!!!</h2>
+
+<ion-card button [routerLink]="'../../' + id">
   <ion-card-header>
     <ion-card-subtitle
-    >Card {{id ?? 'N/A'}} Subtitle</ion-card-subtitle
+      >Detail Card {{ id ?? "N/A" }} Subtitle</ion-card-subtitle
     >
-    <ion-card-title>Card {{id ?? 'N/A'}} Title</ion-card-title>
+    <ion-card-title>Detail Card {{ id ?? "N/A" }} Title</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
@@ -12,4 +13,3 @@
     <p>Test</p>
   </ion-card-content>
 </ion-card>
-
