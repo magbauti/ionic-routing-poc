@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ViewWillEnter } from '@ionic/angular';
 
@@ -7,11 +7,11 @@ import { ViewWillEnter } from '@ionic/angular';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.scss'],
 })
-export class SummaryComponent implements ViewWillEnter {
+export class SummaryComponent implements OnInit {
   id: string | null = '';
   constructor(private route: ActivatedRoute) {}
 
-  ionViewWillEnter() {
+  ngOnInit() {
     console.log(
       'summary: this.route.snapshot.parent.parent.parent.paramMap: ',
       this.route.snapshot.parent?.parent?.parent?.paramMap
