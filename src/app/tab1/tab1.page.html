@@ -5,35 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <!--  <ion-header collapse="condense">-->
-  <!--    <ion-toolbar>-->
-  <!--      <ion-title size="large">Tab 1</ion-title>-->
-  <!--    </ion-toolbar>-->
-  <!--  </ion-header>-->
-  <!-- <ion-segment value="buttons">
-    <ion-segment-button value="assets">
+  <ion-segment value="buttons">
+    <ion-segment-button value="assets" routerLink="assets">
       <ion-label>Assets</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="advisories">
+    <ion-segment-button value="advisories" routerLink="advisories">
       <ion-label>Advisories</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="cases">
+    <ion-segment-button value="cases" routerLink="cases">
       <ion-label>Cases</ion-label>
     </ion-segment-button>
-  </ion-segment> -->
+  </ion-segment>
 
-  <ion-tabs>
-    <ion-tab-bar slot="top">
-      <ion-tab-button tab="assets" href="assets">
-        <ion-label>Assets</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="advisories" href="advisories">
-        <ion-label>Advisories</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="cases" href="cases">
-        <ion-label>Cases</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <router-outlet />
 </ion-content>
